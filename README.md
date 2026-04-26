@@ -1,8 +1,8 @@
-# GitRAG — Chat with Any Repository, Locally
+# GitRAG:Chat with Any Repository, Locally
 
 > **Production-grade local RAG system for chatting with any code repository.**
 
-GitRAG ingests a local repository, builds a semantic + structural index using AST-aware chunking and hybrid search, and supports conversational multi-turn querying — all fully offline.
+GitRAG ingests a local repository, builds a semantic + structural index using AST-aware chunking and hybrid search, and supports conversational multi-turn querying(all fully offline).
 
 ---
 
@@ -309,9 +309,9 @@ GitRAG uses Docker named volumes so data survives `docker compose down`:
 
 Three-tier conversation memory keeps multi-turn chats coherent:
 
-1. **Short-term buffer** — Last N turns kept verbatim.
-2. **Rolling summary** — Older turns compressed and fed as context prefix.
-3. **Context window optimization** — Summary + recent turns fit within the LLM's token budget; oldest turns dropped first when budget is exceeded.
+1. **Short-term buffer**: Last N turns kept verbatim.
+2. **Rolling summary**: Older turns compressed and fed as context prefix.
+3. **Context window optimization**: Summary + recent turns fit within the LLM's token budget; oldest turns dropped first when budget is exceeded.
 
 Query reformulation detects follow-up queries (pronouns, short queries referencing prior context) and prepends context from prior turns to create standalone queries before retrieval.
 
@@ -357,7 +357,7 @@ docker system prune    # clears unused containers/images
 
 ## Future Implementations
 
-GitRAG works end-to-end but there are some future improvements planned:
+GitRAG works end-to-end but here are some future improvements planned:
 
 - [ ] **Smarter Indexing** — Right now, every ingest re-processes the entire repository from scratch. The next step is content-hash based diffing — only files that actually changed since the last ingest get re-chunked and re-embedded. For large repos this would cut ingest time from minutes to seconds.
 
