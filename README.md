@@ -87,7 +87,7 @@ GitRAG uses five layers of hallucination control:
 1. **Low temperature (0.1)** — Reduces creative/hallucinated responses. The LLM stays close to its input context.
 2. **Strict system prompt** — The LLM is explicitly instructed: *"Answer using ONLY the code provided in context. If the answer is not in the provided code, say so clearly."*
 3. **Citation requirement** — The prompt requires the model to reference actual function names, variable names, and line numbers from the context.
-4. **Context grounding** — Only retrieved, verified code chunks from your actual repo are passed to the LLM. The model cannot draw from general training knowledge.
+4. **Context grounding** — Only retrieved, verified code chunks from the ingested repo are passed to the LLM. The model cannot draw from general training knowledge.
 5. **Cross-encoder reranking** — A separate reranker model scores all retrieved chunks for relevance before they reach the LLM, ensuring the most relevant actual code is prioritized over loosely related chunks.
 
 ---
