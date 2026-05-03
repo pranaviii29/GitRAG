@@ -117,9 +117,7 @@ docker exec gitrag_ollama ollama pull llama3.2:1b
 mkdir repos
 git clone https://github.com/<username>/<repo_name> repos/<repo_name>
 
-# 6. Open http://localhost
-     ingest /app/repos/<repo_name>
-     start chatting
+# 6. Open http://localhost,then ingest /app/repos/<repo_name and start chatting
 ```
 
 ## Services
